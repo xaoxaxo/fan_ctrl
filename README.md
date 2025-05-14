@@ -1,15 +1,17 @@
 # fan_ctrl
 
 ## Description
+This is a script - fan speed based on CPU temperature for the Raspberry PI. It will control its speed like it's done on mainstream PC, using Python.
+
 This program is derived from fan_ctrl.py, which was copied from
 https://www.instructables.com/PWM-Regulated-Fan-Based-on-CPU-Temperature-for-Ras/
 
-Thank you for the hard work, Aerandir14
+In the link above, there is a very nice description of the hardware connections. 
+For my needs, I have to change the python script only.
 
-This program is free software: you can redistribute it and/or modify it how you like.
+Thank you for the hard work, Aerandir14 
+
 The source did not specify the license, therefore I am not specifying it either.
-
-This is a script - fan speed based on CPU temperature. It will control its speed like it's done on mainstream PC, using Python.
 
 I have reworked the script to suite my needs:
 - specify initial fan PWM
@@ -17,6 +19,7 @@ I have reworked the script to suite my needs:
 - changed logic for processor temp measurement.
 - added boost for low speeds
 - added minimum speed 
+- overall code refurbishment
 
 ### Dependencies
 

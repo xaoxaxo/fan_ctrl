@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 ###############################################################################
 # 
 # This program is derived from fan_ctrl.py, which was copied from
@@ -35,7 +38,7 @@ speedSteps = [ 0,  40, 85, 100]    # [%]
 # 2. Constants dependant on Hardware setting
 FAN_PIN           = 24   # BCM pin used to drive transistor's base
 WAIT_TIME         = 3    # [s] Time to wait between each refresh
-PWM_FREQ          = 275  # [Hz] Change this value if fan has strange behavior
+PWM_FREQ          = 75  # [Hz] Change this value if fan has strange behavior
 FAN_HYST          = 1    # [%] Fan speed will change only of the difference of PWM Cycle is higher than hysteresis
 FAN_MIN           = 15   # [%] Minimum Fan PWM 
 TEMP_FILTER_RATIO = 0.7  # [% / 100] Filtering value between 0 and 1, the higher this value is, the less history is used for new Temp computation. 
@@ -145,6 +148,12 @@ class FanCtrl:
         print ('TESTING' )
         self.fan.start(0)
         time.sleep(1)
+        
+        self.fan.ChangeDutyCycle(100)
+        time.sleep(FAN_KICK_TIME)
+        self.fan.ChangeDutyCycle(FAN_MIN)
+        time.sleep(6)
+        
         counter = 9997
         while 1:        
             duty = (counter % 21 * 5) 

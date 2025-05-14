@@ -28,10 +28,13 @@ I have reworked the script to suite my needs:
 * You can either run as stand-alone script or install it to be run during start-up as a system service
 
 ### Executing program - standalone
-
+```
 python /home/pi/script/fan_ctrl.py
+```
 or
+```
 python /home/pi/script/fan_ctrl.py -TEST
+```
 
 ### Executing program - service
 

@@ -17,7 +17,7 @@ case "$1" in
     /home/pi/script/fan_ctrl.py &
     ;;
   stop)
-    echo "Stopping listen-for-shutdown.py"
+    echo "Stopping fan_ctrl.py"
     pkill -f /home/pi/script/fan_ctrl.py
     ;;
   *)
